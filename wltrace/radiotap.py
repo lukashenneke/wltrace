@@ -4,10 +4,10 @@ import struct
 import binascii
 
 
-import common
-import utils
+from wltrace import common
+from wltrace import utils
 
-import dot11
+from wltrace import dot11
 
 _IT_VERSION = 0
 

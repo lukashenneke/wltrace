@@ -12,10 +12,10 @@ import abc
 import io
 import collections
 
-import pcap
-import peektagged
+from wltrace import pcap
+from wltrace import peektagged
 
-import dot11
+from wltrace import dot11
 
 MAGIC_LEN = 4
 """File type magic length in bytes.

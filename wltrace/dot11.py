@@ -7,8 +7,8 @@ import math
 import binascii
 import hashlib
 
-from common import GenericHeader, PhyInfo
-import utils
+from wltrace.common import GenericHeader, PhyInfo
+from wltrace import utils
 
 
 class Dot11Exception(Exception):

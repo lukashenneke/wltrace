@@ -82,7 +82,7 @@ class PhyInfo(object):
             setattr(self, attr, kwargs.get(attr, None))
 
 
-import dot11
+from wltrace import dot11
 
 
 class WlTrace(object):

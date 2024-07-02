@@ -14,17 +14,14 @@ http://varsanofiev.com/inside/airopeekv9.htm
 import struct
 import datetime
 
-try:
-    from cStringIO import StringIO
-except:
-    from StringIO import StringIO
+from io import StringIO
 
-import dot11
+from wltrace import dot11
 import xml.etree.ElementTree as ET
 
 
-from common import WlTrace, GenericHeader, PhyInfo
-import utils
+from wltrace.common import WlTrace, GenericHeader, PhyInfo
+from wltrace import utils
 
 PEEKTAGGED_FILE_MAGIC = '\x7fver'
 
@@ -173,7 +170,7 @@ class PeektaggedCapture(WlTrace):
             return []
 
         pkts = []
-        for unused in xrange(n):
+        for unused in range(n):
             try:
                 peektagged_header = PeektaggedPacketHeader(self.fh)
 

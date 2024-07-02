@@ -3,15 +3,12 @@
 
 import struct
 import binascii
-try:
-    from cStringIO import StringIO
-except:
-    from StringIO import StringIO
+from io import StringIO
 
-import radiotap
-import dot11
+from wltrace import radiotap
+from wltrace import dot11
 
-from common import WlTrace, GenericHeader, PhyInfo
+from wltrace.common import WlTrace, GenericHeader, PhyInfo
 
 _PCAP_FILE_MAGIC_NUMBER = 0xa1b2c3d4
 _PCAP_FILE_MAGIC_NUMBER_NS = 0xa1b23c4d
@@ -187,7 +184,7 @@ class PcapCapture(WlTrace):
             return []
 
         pkts = []
-        for _ in xrange(n):
+        for _ in range(n):
             try:
                 pkt = self._read_one_pkt()
                 if pkt.phy.ampdu_ref is not None:

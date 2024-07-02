@@ -8,10 +8,10 @@ import numpy as np
 
 import progressbar as pbar
 
-import dot11
-import wltrace
-import pcap
-import utils
+from wltrace import dot11
+from wltrace import wltrace
+from wltrace import pcap
+from wltrace import utils
 
 import logging
 logging.basicConfig(
