@@ -111,7 +111,7 @@ def bin_to_mac(bin, size=6):
     """
     if len(bin) != size:
         raise Exception("Invalid MAC address: %s" % (bin))
-    return ':'.join([binascii.hexlify(o) for o in bin])
+    return binascii.hexlify(bin, ':')#':'.join([binascii.hexlify(o) for o in bin])
 
 
 def pairwise(it):
